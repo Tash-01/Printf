@@ -3,7 +3,7 @@
 /**
  * g_prcsn - prcsn calc for print
  * @format: str to print to
- * @i: argument list to print.
+ * @x: argument list to print.
  * @list: argument list.
  *
  * Return: prcsn.
@@ -14,7 +14,9 @@ int g_prcsn(const char *format, int *x, va_list list)
 	int prcsn = -1;
 
 	if (format[index_pos] != '.')
+	{
 		return (prcsn);
+	}
 
 	prcsn = 0;
 
@@ -35,7 +37,7 @@ int g_prcsn(const char *format, int *x, va_list list)
 			break;
 	}
 
-	*i = index_pos - 1;
+	*x = index_pos - 1;
 
 	return (prcsn);
 }
