@@ -11,10 +11,12 @@ in _printf(const char *format, ...)
 {
 	int i, flg, width, s, prcsn;
 	int prnt = 0, char_prnt = 0, bff_i = 0;
-	char bff[BUFF_SIZE];
+	char bff[BFF_SIZE];
 
 	if (format == NULL)
+	{
 		return (-1);
+	}
 
 	va_start(list, format);
 
@@ -31,15 +33,15 @@ in _printf(const char *format, ...)
 		{
 			prnt_b(bff, &bff_i);
 			flg = g_flg(format, &i);
-			width = g_width(format, &i, list);
-			prcsn = get_prcsn(format, &i, list);
-			s = get_s(format, &i);
+			width = g_w(format, &i, list);
+			prcsn = g_prcsn(format, &i, list);
+			s = g_s(format, &i);
 			++i;
 			prnt = prnt_h(format, &i, list, bff,
 				flg, width, prcsn, s);
 			if (prnt == -1)
 				return (-1);
-			cahr_prnt += prnt;
+			char_prnt += prnt;
 		}
 	}
 
