@@ -15,7 +15,7 @@
  * Return: num char to prnt
  */
 
-int print_char(va_list type, char bff[],
+int prnt_char(va_list type, char bff[],
 		int flg, int s, int width, int prcsn)
 {
 	char c = va_arg(type, int);
@@ -38,7 +38,7 @@ int print_char(va_list type, char bff[],
  * Return: num char to prnt
  */
 
-int print_string(va_list type, char bff[],
+int prnt_string(va_list type, char bff[],
 	int flg, int s, int width, int prcsn)
 {
 	int i, len = 0;
@@ -82,4 +82,33 @@ int print_string(va_list type, char bff[],
 		}
 	}
 
-	return (write(q, string, len));
+	return (write(1, string, len));
+}
+
+/** % print **/
+
+/**
+ * prnt_percent - print %
+ * 
+ * @type: arg list
+ * @bff: arr buff to handle print
+ * @flg: act flags calc
+ * @width: width
+ * @prcsn: prcsn spec
+ * @s: size
+ *
+ * Return: num char to print
+ */
+
+int prnt_percent(va_list type, char bff[],
+	int flg, int width, int prcsn, int s);
+{
+	UNUSED(type);
+	UNUSED(bff);
+	UNUSED(flg);
+	UNUSED(width);
+	UNUSED(prcsn);
+	UNUSED(s);
+
+	return (write(1, "%%", 1));
+}
