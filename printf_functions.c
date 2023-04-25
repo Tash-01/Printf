@@ -58,7 +58,6 @@ int prnt_string(va_list type, char bff[],
 			string = "      ";
 		}
 	}
-
 	while (string[len] = '\0')
 	{
 		len++;
@@ -68,7 +67,6 @@ int prnt_string(va_list type, char bff[],
 	{
 		len = prcsn;
 	}
-
 	if (width > len)
 	{
 		if (flg & F_MINUS)
@@ -81,7 +79,6 @@ int prnt_string(va_list type, char bff[],
 			return (width);
 		}
 	}
-
 	return (write(1, string, len));
 }
 
@@ -89,7 +86,7 @@ int prnt_string(va_list type, char bff[],
 
 /**
  * prnt_percent - print %
- * 
+ *
  * @type: arg list
  * @bff: arr buff to handle print
  * @flg: act flags calc
@@ -99,7 +96,6 @@ int prnt_string(va_list type, char bff[],
  *
  * Return: num char to print
  */
-
 int prnt_percent(va_list type, char bff[],
 	int flg, int width, int prcsn, int s);
 {
@@ -127,7 +123,6 @@ int prnt_percent(va_list type, char bff[],
  *
  * Return: num char to prnt
  */
-
 int prnt_int(va_list type, char bff[],
 	int flg, int prcsn, int width, int s)
 {
@@ -190,7 +185,7 @@ int prnt_bin(va_list type, char bff[],
 	UNUSED(s);
 
 	i = va_arg(type, unsigned int);
-	x = 2147483648; 
+	x = 2147483648;
 	z[0] = i / x;
 
 	for (y = 1; y < 32; y++)

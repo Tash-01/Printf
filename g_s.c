@@ -7,7 +7,7 @@
  *
  * Return: prcsn.
  */
-int get_size(const char *format, int *x)
+int g_s(const char *format, int *x)
 {
 	int index_pos = *x + 1;
 	int s = 0;

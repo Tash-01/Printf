@@ -4,23 +4,22 @@
 
 /**
  * char_hndl_w - print str
- * 
+ *
  * @c: char
  * @bff: bff array
  * @flg:  flg calc
  * @width: width
- * @prcsn: prcsn 
- * @s: s 
+ * @prcsn: prcsn
+ * @s: s
  *
  * Return: num chars
  */
- 
 int char_hndl_w(char c, char bff[],
 	int flg, int width, int prcsn, int s)
-{ 
-	int x ;
+{
+	int x;
 	char ch = ' ';
-	
+
 	x = 0;
 
 	UNUSED(prcsn);
@@ -56,15 +55,14 @@ int char_hndl_w(char c, char bff[],
  *
  * @is_neg: arg list
  * @index: char type
- * @bff: bff array 
+ * @bff: bff array
  * @flgs:  flg
  * @width: width
- * @prcsn: prcsn 
+ * @prcsn: prcsn
  * @s: size
  *
  * Return: char print num.
  */
- 
 int num_writer(int is_neg, int index, char bff[],
 	int flgs, int width, int prcsn, int s)
 {
@@ -93,23 +91,22 @@ int num_writer(int is_neg, int index, char bff[],
  * @bff: bff
  * @flg: flg
  * @width: width
- * @prec: prcsn 
+ * @prec: prcsn
  * @len: num length
  * @ch: cahr pad
  * @ch_rem: char remainder
  *
  * Return: char print num.
  */
- 
 int num_w(int index, char bff[],
 	int flg, int width, int prcsn, int length, char ch, char ch_rem)
 {
 	int x, start_ch = 1;
 
 	if (prcsn == 0 && index == BUFF_S - 2 && bff[index] == '0' && width == 0)
-		return (0); 
+		return (0);
 	if (prcsn == 0 && index == BUFF_S - 2 && bff[index] == '0')
-		bff[index] = ch = ' '; 
+		bff[index] = ch = ' ';
 	if (prcsn > 0 && prcsn < len)
 		ch = ' ';
 	while (prcsn > len)
@@ -155,8 +152,8 @@ int num_w(int index, char bff[],
  * @index: start point in bff index
  * @bff: char bff
  * @flg: flg
- * @width: Width 
- * @prcsn: prcsn 
+ * @width: Width
+ * @prcsn: prcsn
  * @s: size
  *
  * Return: write char num
@@ -171,7 +168,7 @@ int unsgnd_w(int is_neg, int index,
 	UNUSED(s);
 
 	if (prcsn == 0 && index == BUFF_S - 2 && bff[index] == '0')
-		return (0); 
+		return (0);
 
 	if (prcsn > 0 && prcsn < len)
 		ch = ' ';
@@ -192,11 +189,11 @@ int unsgnd_w(int is_neg, int index,
 
 		bff[x] = '\0';
 
-		if (flg & F_M) 
+		if (flg & F_M)
 		{
 			return (write(1, &bff[index], len) + write(1, &bff[0], x));
 		}
-		else 
+		else
 		{
 			return (write(1, &bff[0], x) + write(1, &bff[index], len));
 		}
@@ -212,7 +209,7 @@ int unsgnd_w(int is_neg, int index,
  * @bff: cahr bff
  * @index: index for start point in bff
  * @len: length
- * @width: width 
+ * @width: width
  * @flg: flg
  * @ch: char ping
  * @ch_rem: char remainder

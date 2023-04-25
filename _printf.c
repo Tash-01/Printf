@@ -6,8 +6,7 @@
  *
  * Return: printed char
  */
-
-in _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	int i, flg, width, s, prcsn;
 	int prnt = 0, char_prnt = 0, bff_i = 0;
@@ -17,10 +16,8 @@ in _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-
 	va_start(list, format);
-
-	for (i = 0; format && foramt[i] !- '\0'; i++)
+	for (i = 0; format && foramt[i] !-'\0'; i++)
 	{
 		if (format[i] != '%')
 		{
@@ -44,12 +41,10 @@ in _printf(const char *format, ...)
 			char_prnt += prnt;
 		}
 	}
-
 	prnt_b(bff, &bff_i);
-
 	va_end(list);
 
-	return (char_prnt);
+	return (char _prnt);
 }
 
 /**
@@ -57,7 +52,6 @@ in _printf(const char *format, ...)
 * @bff: char arr
 * @bff_i: index to show where to insert next char
 */
-
 void prnt_b(char bff[], int *bff_i)
 {
 	if (*bff_i > 0)

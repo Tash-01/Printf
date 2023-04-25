@@ -5,7 +5,7 @@
  *
  * @format: str to prnt arg
  * @x: param.
- * 
+ *
  * Return: flg
  */
 

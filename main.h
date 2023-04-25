@@ -46,9 +46,9 @@ int print_pntr(va_list type, char bff[],
 
 /* specifiers */
 int g_flg(const char *format, int *i);
-int g_width(const char *format, int *i, va_list list);
+int g_widthw(const char *format, int *x, va_list list);
 int g_prcsn(const char *format, int *i, va_list list);
-int g_s(const char *format, int *i);
+int g_s(const char *format, int *x);
 
 /*reverse str*/
 int print_rev(va_list type, char bff[],

@@ -2,11 +2,10 @@
 
 /**
  * can_prnt - check if char can print
- * @c: Char 
+ * @c: Char
  *
  * Return: 1 if c is printable, 0 otherwise
  */
- 
 int can_prnt(char c)
 {
 	if (c >= 32 && c < 127)
@@ -16,19 +15,18 @@ int can_prnt(char c)
 }
 
 /**
- * app_hx_code - app hx cde to bff
+ * app_hx_code - app hx code to bff
  *
- * @bff: char arr
- * @index: Index 
+ * @bff: arr of char
+ * @x: x at which to start appending
  * @ascii_code: ASSCI CODE.
  *
  * Return: Always 3
  */
- 
-int app_hx_code(char ascii_code, char bff[], int x)
+int app_hx_code(char, ascii_code, char bff[], int x)
 {
-	char arr_map[] = "0123456789ABCDEF";
-	
+	char map_to[] = "0123456789ABCDEF";
+
 	if (ascii_code < 0)
 		ascii_code *= -1;
 
@@ -47,7 +45,6 @@ int app_hx_code(char ascii_code, char bff[], int x)
  *
  * Return: 1 if true, 0 if fals
  */
- 
 int is_dgt(char c)
 {
 	if (c >= '0' && c <= '9')
@@ -64,7 +61,6 @@ int is_dgt(char c)
  *
  * Return: val num
  */
- 
 long int conv_s_num(long int num, int s)
 {
 	if (s == S_L)
@@ -83,7 +79,6 @@ long int conv_s_num(long int num, int s)
  *
  * Return: Casted value of num
  */
- 
 long int conv_s_unsgnd(unsigned long int n, int s)
 {
 	if (s == S_L)

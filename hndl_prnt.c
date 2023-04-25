@@ -8,7 +8,7 @@ include "main.h"
  * @bff: buffer array to handle print.
  * @flg: flags
  * @width: g_w.
- * @prcsn: precision 
+ * @prcsn: precision
  * @s: size
  *
  * Return: 1 or 2;
@@ -17,9 +17,10 @@ int hndl_prnt(const char *str_fmt, int *index, va_list list, char bff[],
 	int flg, int width, int prcsn, int s)
 {
 	int x, uknwn_len, char_prntd;
+
 	ukwnn_len = 0;
 	char_prntd = -1;
-	
+
 	str_fmt_t str_fmt_types[] = {
 		{'c', prnt_char}, {'s', prnt_str}, {'%', prnt_percent},
 		{'i', prnt_int}, {'d', prnt_int}, {'b', prnt_bin},

@@ -13,12 +13,11 @@
  *
  * Return: num chars printed
  */
- 
 int print_pnt(va_list type, char bff[],
 	int flg, int width, int prcsn, int s)
 {
 	char ch_rem = 0, padd = ' ';
-	int i = BFF_S - 2, len = 2, init_padd = 1; 
+	int i = BFF_S - 2, len = 2, init_padd = 1;
 	unsigned long num_pntr;
 	char arr_map[] = "0123456789abcdef";
 	void *p = va_arg(type, void *);
@@ -67,7 +66,6 @@ int print_pnt(va_list type, char bff[],
  *
  * Return: num chars printed
  */
- 
 int print_nprnt(va_list type, char bff[],
 	int flg, int width, int prcsn, int s)
 {
@@ -110,8 +108,6 @@ int print_nprnt(va_list type, char bff[],
  *
  * Return: num chars printed
  */
- 
-
 int print_rev(va_list type, char bff[],
 	int flg, int width, int prcsn, int s)
 {
@@ -156,9 +152,8 @@ int print_rev(va_list type, char bff[],
  *
  * Return: num chars printed
  */
- 
 int print_rot13(va_list type, char bff[],
-	int flg, int width, int prcsn, int s)
+		 int flg, int width, int prcsn, int s)
 {
 	char c;
 	char *str;
