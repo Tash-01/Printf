@@ -20,6 +20,7 @@ int can_prnt(char c)
  * @bff: arr of char
  * @x: x at which to start appending
  * @ascii_code: ASSCI CODE.
+ * @char: char map_to
  *
  * Return: Always 3
  */

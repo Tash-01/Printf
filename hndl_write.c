@@ -91,8 +91,8 @@ int num_writer(int is_neg, int index, char bff[],
  * @bff: bff
  * @flg: flg
  * @width: width
- * @prec: prcsn
- * @len: num length
+ * @prcsn: prcsn
+ * @length: num length
  * @ch: cahr pad
  * @ch_rem: char remainder
  *
