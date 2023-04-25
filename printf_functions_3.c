@@ -17,7 +17,7 @@ int print_pnt(va_list type, char bff[],
 	int flg, int width, int prcsn, int s)
 {
 	char ch_rem = 0, padd = ' ';
-	int i = BFF_S - 2, len = 2, init_padd = 1;
+	int i = BUFF_S - 2, len = 2, init_padd = 1;
 	unsigned long num_pntr;
 	char arr_map[] = "0123456789abcdef";
 	void *p = va_arg(type, void *);

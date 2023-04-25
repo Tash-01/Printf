@@ -22,7 +22,7 @@ int g_prcsn(const char *format, int *x, va_list list)
 
 	for (index_pos += 1; format[index_pos] != '\0'; index_pos++)
 	{
-		if (is_digit(format[index_pos]))
+		if (is_dgt(format[index_pos]))
 		{
 			prcsn *= 10;
 			prcsn += format[index_pos] - '0';

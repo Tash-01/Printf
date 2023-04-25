@@ -13,9 +13,9 @@ int _printf(const char *format, ...);
 
 /* char and str */
 int print_char(va_list type, char bff[],
-		int flg, int s, int width, int prcsn
+		int flg, int s, int width, int prcsn);
 int print_string(va_list type, char bff[],
-	    int flg, int s, int width, int prcsn)
+	    int flg, int s, int width, int prcsn);
 int print_percent(va_list type, char bff[],
 	int flg, int width, int prcsn, int s);
 
