@@ -8,6 +8,7 @@
 #define BUFF_SIZE 1024
 
 int _printf(const char *format, ...);
+void prnt_b(char bff[], int *bff_i);
 
 /** Functions **/
 
