@@ -25,7 +25,7 @@ int char_hndl_w(char c, char bff[],
 	UNUSED(prcsn);
 	UNUSED(s);
 
-	if (flg & F_ZERO)
+	if (flg & F_Z)
 		ch = '0';
 
 	bff[x++] = c;
@@ -35,13 +35,13 @@ int char_hndl_w(char c, char bff[],
 	{
 		bff[BUFF_SIZE - 1] = '\0';
 		for (x = 0; x < width - 1; x++)
-			bff[BUFF_S - x - 2] = ch;
+			bff[BFF_S - x - 2] = ch;
 
 		if (flg & F_M)
 			return (write(1, &bff[0], 1) +
 					write(1, &bff[BUFF_SIZE - x - 1], width - 1));
 		else
-			return (write(1, &bff[BUFF_X - x - 1], width - 1) +
+			return (write(1, &bff[BFF_X - x - 1], width - 1) +
 					write(1, &bff[0], 1));
 	}
 
@@ -66,12 +66,12 @@ int char_hndl_w(char c, char bff[],
 int num_writer(int is_neg, int index, char bff[],
 	int flgs, int width, int prcsn, int s)
 {
-	int len = BUFF_S - index - 1;
+	int len = BFF_S - index - 1;
 	char ch = ' ', ch_rem = 0;
 
 	UNUSED(s);
 
-	if ((flgs & F_Z) && !(flg & F_M))
+	if ((flgs & F_Z) && !(flgs & F_M))
 		ch = '0';
 	if (is_neg)
 		ch_rem = '-';
@@ -99,13 +99,13 @@ int num_writer(int is_neg, int index, char bff[],
  * Return: char print num.
  */
 int w_num(int index, char bff[],
-	int flg, int width, int prcsn, int length, char ch, char ch_rem)
+	int flg, int width, int prcsn, int len, char ch, char ch_rem)
 {
 	int x, start_ch = 1;
 
 	if (prcsn == 0 && index == BUFF_SIZE - 2 && bff[index] == '0' && width == 0)
 		return (0);
-	if (prcsn == 0 && index == BUFF_S - 2 && bff[index] == '0')
+	if (prcsn == 0 && index == BFF_S - 2 && bff[index] == '0')
 		bff[index] = ch = ' ';
 	if (prcsn > 0 && prcsn < len)
 		ch = ' ';
@@ -122,7 +122,7 @@ int w_num(int index, char bff[],
 		{
 			if (ch_rem)
 				bff[--index] = ch_rem;
-			return (write(1, &bff[index], length) + write(1, &bff[1], x - 1));
+			return (write(1, &bff[index], len) + write(1, &bff[1], x - 1));
 		}
 		else if (!(flg & F_M) && ch == ' ')
 		{
@@ -167,13 +167,13 @@ int unsgnd_w(int is_neg, int index,
 	UNUSED(is_neg);
 	UNUSED(s);
 
-	if (prcsn == 0 && index == BUFF_S - 2 && bff[index] == '0')
+	if (prcsn == 0 && index == BFF_S - 2 && bff[index] == '0')
 		return (0);
 
 	if (prcsn > 0 && prcsn < len)
 		ch = ' ';
 
-	while (prcsn > length)
+	while (prcsn > len)
 	{
 		bff[--index] = '0';
 		len++;
@@ -243,7 +243,7 @@ int pntr_w(char bff[], int index, int len,
 				bff[--index] = ch_rem;
 			return (write(1, &bff[3], x - 3) + write(1, &bff[index], len));
 		}
-		else if (!(flg & F_MINUS) && ch == '0')
+		else if (!(flg & F_M) && ch == '0')
 		{
 			if (ch_rem)
 				bff[--ch_start] = ch_rem;

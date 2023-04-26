@@ -13,9 +13,9 @@ int g_s(const char *format, int *x)
 	int s = 0;
 
 	if (format[index_pos] == 'l')
-		s = S_LONG;
+		s = S_L;
 	else if (format[index_pos] == 'h')
-		s = S_SHORT;
+		s = S_S;
 
 	if (s == 0)
 		*x = index_pos - 1;

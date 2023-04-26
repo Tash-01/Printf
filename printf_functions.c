@@ -58,7 +58,7 @@ int prnt_string(va_list type, char bff[],
 			string = "      ";
 		}
 	}
-	while (string[len] = '\0')
+	while (string[len] != '\0')
 	{
 		len++;
 	}
@@ -69,7 +69,7 @@ int prnt_string(va_list type, char bff[],
 	}
 	if (width > len)
 	{
-		if (flg & F_MINUS)
+		if (flg & F_M)
 		{
 			write(1, &string[0], len);
 			for (i = width - len; i > 0; i--)
@@ -128,7 +128,7 @@ int prnt_int(va_list type, char bff[],
 {
 	int i = BFF_S - 2;
 	int is_neg = 0;
-	long int num = va_arg(type, long int);
+	long int n = va_arg(type, long int);
 	unsigned long int x;
 
 	n = conv_s_num(num, s);

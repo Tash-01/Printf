@@ -7,11 +7,12 @@
  * Return: printed char
  */
 
-in _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	int i, flg, width, s, prcsn;
 	int prnt = 0, char_prnt = 0, bff_i = 0;
 	char bff[BUFF_SIZE];
+	va_list list;
 
 	if (format == NULL)
 		return (-1);
@@ -23,7 +24,7 @@ in _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			bff[bff_i++] = format[i];
-			if (bff_ind == BUFF_SIZE)
+			if (bff_i == BUFF_SIZE)
 				prnt_b(bff, &bff_i);
 			char_prnt++;
 		}
@@ -32,14 +33,14 @@ in _printf(const char *format, ...)
 			prnt_b(bff, &bff_i);
 			flg = g_flg(format, &i);
 			width = g_width(format, &i, list);
-			prcsn = get_prcsn(format, &i, list);
-			s = get_s(format, &i);
+			prcsn = g_prcsn(format, &i, list);
+			s = g_s(format, &i);
 			++i;
 			prnt = prnt_h(format, &i, list, bff,
 				flg, width, prcsn, s);
 			if (prnt == -1)
 				return (-1);
-			cahr_prnt += prnt;
+			char_prnt += prnt;
 		}
 	}
 
@@ -59,7 +60,7 @@ in _printf(const char *format, ...)
 void prnt_b(char bff[], int *bff_i)
 {
 	if (*bff_i > 0)
-		write(1, @bff[0], *bff_i);
+		write(1, bff[0], *bff_i);
 
 	*bff_i = 0;
 }

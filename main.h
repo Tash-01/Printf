@@ -57,7 +57,7 @@ int prnt_int(va_list type, char bff[],
 	int flg, int prcsn, int width, int s);
 int prnt_bin(va_list type, char bff[],
 	int flg, int prcsn, int width, int s);
-	
+
 int unsgnd_prnt(va_list type, char bff[],
 	int flg, int width, int prcsn, int s);
 int octal_print(va_list type, char bff[],
