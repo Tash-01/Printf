@@ -19,11 +19,11 @@
 #define S_S 1
 
 /**
- *  * struct fmt - struct operation
- *   *
- *    * @fmt: The format.
- *     * @fn: The function associated.
- *      */
+ * struct fmt - struct operation
+ *
+ * @fmt: The format.
+ * @fn: The function associated.
+ */
 
 struct fmt
 {
