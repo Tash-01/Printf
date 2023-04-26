@@ -7,6 +7,38 @@
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
 
+/* flg */
+#define F_M 1
+#define F_P 2
+#define F_Z 4
+#define F_H 8
+#define F_SP 16
+
+/* S */
+#define S_L 2
+#define S_S 1
+
+/**
+ *  * struct fmt - struct operation
+ *   *
+ *    * @fmt: The format.
+ *     * @fn: The function associated.
+ *      */
+
+struct fmt
+{
+		char fmt;
+			int (*fn)(va_list, char[], int, int, int, int);
+};
+
+/**
+ * typedef struct fmt fmt_t - struct operation
+ *
+ * @fmt: format
+ * @fm_t: function
+ */
+typedef struct fmt fmt_t;
+
 int _printf(const char *format, ...);
 void prnt_b(char bff[], int *bff_i);
 
@@ -73,7 +105,7 @@ int unsgnd_w(int is_neg, int index,
 
 /** extra **/
 int can_prnt(char c);
-int app_hx_code(char, ascii_code, char bff[], int x);
+int app_hx_code(char ascii_code, char bff[], int x);
 int is_dgt(char c);
 
 long int conv_s_num(long int num, int s);
