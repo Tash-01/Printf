@@ -24,19 +24,18 @@ int prnt_int(va_list type, char bff[],
 	int flg, int prcsn, int width, int s);
 int prnt_bin(va_list type, char bff[],
 	int flg, int prcsn, int width, int s);
-	/**************************************/
-int print_unsgnd(va_list type, char bff[],
-	int flg, int prcsn, int width, int s);
-int print_octal(va_list type, char bff[],
-	int flg, int prcsn, int width, int s);
-int print_hxdec(va_list type, char bff[],
-	int flg, int prcsn, int width, int s);
-int print_hx_upper(va_list type, char bff[],
-	int flg, int prcsn, int width, int s);
+	
+int unsgnd_prnt(va_list type, char bff[],
+	int flg, int width, int prcsn, int s);
+int octal_print(va_list type, char bff[],
+	int flg, int width, int prcsn, int s);
+int hexdec_print(va_list type, char bff[],
+	int flg, int width, int prcsn, int s);
+int upper_hexdec_print(va_list type, char bff[],
+	int flg, int width, int prcsn, int s);
+int hex_print(va_list type, char arr_map[], char bff[],
+	int flg, char act_flg, int width, int prcsn, int s);
 
-int print_hexa(va_list type, char map_to[],
-char bff[], int flg, char flag_ch, int prcsn, int width, int s);
-/**************************************************/
 /* non printable characters */
 int print_nprnt(va_list type, char bff[],
 	int flg, int width, int prcsn, int s);
